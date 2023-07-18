@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 /**
   * main - Entry point
   * Description: 'prints _putchar to stdout'
@@ -15,6 +15,6 @@ void print_alphabet_x10(void)
 		{
 			_putchar(j);
 		}
-		_putchar('\n'0);
+		_putchar('\n');
 	}
 }
