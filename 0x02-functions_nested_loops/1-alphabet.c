@@ -1,8 +1,8 @@
 #include "main.h"
 /**
-  * main - Entry point
-  * Description: 'prints _putchar to stdout'
-  * Return:  Always 0
+  * print_alphabet - prints the alphabet in lowercase
+  *
+  * Return:  Always 0 (success)
   */
 void print_alphabet(void)
 {
