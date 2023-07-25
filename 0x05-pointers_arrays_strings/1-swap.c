@@ -4,8 +4,8 @@
   * swap_int - writes two values of two integers
   *		using two input parameters
   *
-  * @c: input parameter 1
-  * @n: input parameter 2
+  * @a: input parameter 1
+  * @b: input parameter 2
   *
   * Return: Nothing
   */
