@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * *_stropy - copies the string pointed to by src
+  * *_strcpy - copies the string pointed to by src
   * @dest: char type string
   * @src: char typr string
   * Description:  copy the string pointed to by pointer `src` to
@@ -9,7 +9,7 @@
   * Return: pointer to `dest`
   */
 
-char *_stropy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int i = -1;
 
@@ -18,5 +18,5 @@ char *_stropy(char *dest, char *src)
 		dest[i] = src[i];
 	} while (src[i] != '\0');
 
-	return (dest);`
+	return (dest);
 }
