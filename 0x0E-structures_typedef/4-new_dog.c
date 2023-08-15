@@ -11,11 +11,11 @@
 
 int _strlen(const char *str)
 {
-	int lenght = 0;
+	int length = 0;
 
 	while (*str++)
 		length++;
-	return (lenght);
+	return (length);
 }
 
 /**
@@ -49,7 +49,7 @@ char *_strcopy(char *dest, char *src)
   *		NULL if function fails
   */
 
-dog_t *new_dog(char *name. float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
 
