@@ -1,50 +1,29 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
-  * read_textfile - reads text from a file and prints it
-  * @filename: name of file to read
-  * @letters: number of bytes to read
-  *
-  * Return: number bytes read/printed
-  */
+ * read_textfile- Read txt from a file and print to stdout.
+ * @filename: txt file that is read
+ * @letters: num of letter to read
+ * Description: task number 0
+ * Return: w- the number that is read and printed or 0 when func fails
+ */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t bytes_read = 0;
-	char buffer[READ_BUF_SIZE];
+	char *x;
+	ssize_t y;
+	ssize_t w;
+	ssize_t r;
 
-	if (!filename || !letters)
+	y = open(filename, O_RDONLY);
+	if (y == -1)
 		return (0);
+	x = malloc(sizeof(char) * letters);
+	r = read(y, x, letters);
+	w = write(STDOUT_FILENO, x, r);
 
-	fd = open(filename, O_RDONLY); /* Corrected the file open flag */
-	if (fd == -1)
-		return (0);
-
-	while (letters > 0)
-	{
-		ssize_t bytes = read(fd, buffer, READ_BUF_SIZE);
-		ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes);
-
-		if (bytes == -1)
-		{
-			close(fd);
-			return (0);
-		}
-
-		if (bytes_written == -1)
-		{
-			close(fd);
-			return (0);
-		}
-
-		bytes_read += bytes_written;
-		letters -= bytes_written;
-
-		if (bytes < READ_BUF_SIZE)
-			break;
-	}
-
-	close(fd);
-	return (bytes_read);
+	free(x);
+	close(y);
+	return (w);
 }
